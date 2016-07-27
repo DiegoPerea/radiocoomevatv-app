@@ -1,0 +1,108 @@
+<main>
+
+  <div class="container coomeva-container">
+    <div class="col-md-10">
+
+
+      <div class="col-md-8 program-player">
+        <div class="program-player-inset">
+          <div class="videogular-container">
+
+            <videogular vg-theme="programsCtrl.videoHandle.theme">
+              <vg-media vg-src="programsCtrl.videoHandle.sources">
+              </vg-media>
+              <vg-controls>
+                <vg-play-pause-button></vg-play-pause-button>
+                <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+                <vg-scrub-bar>
+                  <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                </vg-scrub-bar>
+                <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+                <vg-volume>
+                  <vg-mute-button></vg-mute-button>
+                  <vg-volume-bar></vg-volume-bar>
+                </vg-volume>
+                <vg-fullscreen-button></vg-fullscreen-button>
+              </vg-controls>
+
+              <vg-overlay-play></vg-overlay-play>
+
+            </videogular>
+
+          </div>
+        </div>
+
+
+        <div class="program-information">
+          <h3 class="item-title">{{programsCtrl.videoHandle.title}}<strong class="item-subtitle">{{programsCtrl.videoHandle.subtitle}}</strong></h3>
+          <p> {{programsCtrl.videoHandle.description}}  </p>
+        </div>
+
+
+        <div class="program-episodes">
+          <h3 class="item-title title-more">Capítulos</h3>
+          <div ng-class="podcastGrid" class="episode row" ng-repeat="item in programsCtrl.chapters">
+            <div class="col-md-4">
+              <div class="podcasts-image-conteiner">
+                <img src="{{item.image}}" alt="" />
+                <div class="playButton episode-playButton playButton-reverse">
+                  <i class="glyphicon glyphicon-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="episode-information col-md-8">
+              <strong>{{item.name}}</strong>
+              <span>{{item.catName}}</span>
+            </div>
+            <strong></strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- end-player -->
+
+
+      <div class="col-md-4 programs-list">
+        {{programsCtrl.prototype.name}}
+        <div class="row rower">
+
+          <div class="col-md-12">
+            <h3 class="title">Programas</h3>
+
+          </div>
+        </div>
+        <div class="row rower">
+          <div class="program col-md-12" ng-repeat="item in programsCtrl.allPrograms" ng-click="selectProgram(item)">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="row">
+                    <img src="{{item.image}}" alt="" />
+                    <figure class="playButton program-playButton playButton-reverse">
+                      <i class="glyphicon glyphicon-play"></i>
+                    </figure>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <strong>
+                    {{item.name}}
+                  </strong>
+                  <p>
+                    {{item.description}}
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-md-2">
+      <advertiseright></advertiseright>
+    </div>
+  </div>
+
+</main>

@@ -1,14 +1,14 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import 'normalize.css';
 
 angular.module('app', [
     uiRouter,
-    Common,
+
     Components
+
   ])
   .config(($locationProvider) => {
     "ngInject";
@@ -16,5 +16,24 @@ angular.module('app', [
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
+  .config(($stateProvider, $urlRouterProvider) => {
+    "ngInject";
 
+    $urlRouterProvider.otherwise('/home');
+
+    $stateProvider
+      .state('home', {
+        url: '/home',
+        component: 'home'
+      })
+      .state('podcast', {
+        url: '/podcast',
+        component: 'podcastpage'
+      })
+      .state('programs', {
+        url: '/programs',
+        component: 'programs'
+      })
+      ;
+  })
   .component('app', AppComponent);

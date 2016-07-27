@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+body{
+  background: #30302e;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(208, 208, 208);
+}
+.header-default{
+  background: url("../img/headerback.jpg");
+  margin-bottom:0px;
+}
+.radio.adulto-contemporaneo{
+  background: url('../../../assets/img/tira_reproductor.jpg');
+  background-size: auto 100%;
+}
+.radio.instrumental{
+  background: url('../../../assets/img/background_reproductor_instrumental.jpg');
+  background-size: auto 100%;
+}
+.radio.jovenes{
+  background: url('../../../assets/img/background_reproductor_jovenes.jpg');
+  background-size: auto 100%;
+}
+.list-group a {
+  background: url('../../../assets/img/tira_reproductor.jpg')
+}

@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="/assets/css/ng-audio.min.css">
+<div ng-class="" class="radio {{radioCtrl.radioClass}} radio-zone">
+  <div >
+
+
+  <div ng-mouseover="radioCtrl.hoverCategory = true" ng-mouseleave="radioCtrl.hoverCategory = false" class="panel-heading" role="tab" id="headingOne">
+    <h4 class="panel-title text-right">
+      <a role="button" aria-expanded="true">
+        <span class="ng-binding">{{radioCtrl.currentRadio}}</span>
+        <i ng-class="radioCtrl.hoverCategory ? 'glyphicon glyphicon-play active' : 'glyphicon glyphicon-play'" class="i-radio-category glyphicon glyphicon-play"></i>
+      </a>
+    </h4>
+    <div ng-class="radioCtrl.hoverCategory ? 'list-group active' : 'list-group'" class="list-group">
+      <a ng-click="radioCtrl.getRadio.adultoContemporaneo();" class="list-group-item">Adulto Contemporaneo</a>
+      <a ng-click="radioCtrl.getRadio.instrumental();" class="list-group-item">Instrumental</a>
+      <a ng-click="radioCtrl.getRadio.jovenes();" class="list-group-item">Jovenes</a>
+    </div>
+  </div>
+
+    <div class="audio-player">
+<div class="background-image" style="background: url({{radioCtrl.audioHandle.metadata.cover.replace(')', '%29')}})"></div>
+      <div class="vintage_back"></div>
+      <div class="panel-body">
+        <div class="player player-adulto" popover-title="Próxima Canción" popover-trigger="mouseenter" uib-popover-template="dsfgsdfgsdfgsdfg" popover-enable="true" popover-placement="right">
+          <div class="cover">
+            <img src="{{radioCtrl.audioHandle.metadata.cover}}" alt="" />
+            <div class="nexty">
+              <strong>
+                <span>Próxima canción</span>
+                {{radioCtrl.audioHandle.metadata.next.artist}} - {{radioCtrl.audioHandle.metadata.next.song}}
+              </strong>
+            </div>
+          </div>
+
+          <div class="current-song">
+            <strong>{{radioCtrl.audioHandle.metadata.artist}}</strong>
+            <span>{{radioCtrl.audioHandle.metadata.song}}</span>
+          </div>
+          <div class="player-control" ng-click="radioCtrl.playPauseButton()">
+            <i ng-class="radioCtrl.playerButtonClass"></i>
+          </div>
+          <div class="eq-bars-container ">
+            <div class="eq-bar eq-bar-1"></div>
+            <div class="eq-bar eq-bar-2"></div>
+            <div class="eq-bar eq-bar-3"></div>
+            <div class="eq-bar eq-bar-4"></div>
+            <div class="eq-bar eq-bar-5"></div>
+            <div class="eq-bar eq-bar-6"></div>
+            <div class="eq-bar eq-bar-7"></div>
+            <div class="eq-bar eq-bar-8"></div>
+            <div class="eq-bar eq-bar-9"></div>
+            <div class="eq-bar eq-bar-10"></div>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="top-10">
+    <div class="top10-player-lyrics" ng-bind-html="lyricsTop10" ng-style="lyricsStyle"></div>
+    <h3>TOP 10</h3>
+    <div class="list-group">
+
+      <a class="list-group-item row no-margin no-padding" ng-repeat="item in radioCtrl.top10" ng-click="radioCtrl.selectTop10(item)">
+        <div class="col-md-3 top10-item-cover">
+          <img src="{{item.cover}}" alt="" class="top10-img-thumbnail"/>
+        </div>
+        <div class=" col-md-6 song-information">
+          <strong class="artist-top-10 col-lg-12 no-padding">{{item.artist}}</strong>
+          <span class="song-top-10 col-lg-12 no-padding">{{item.song}}</span>
+        </div>
+        <div class="play-top-10 col-md-3 text-right">
+          <i class="glyphicon glyphicon-play"></i>
+        </div>
+
+      </a>
+    </div>
+  </div>
+
+</div>
