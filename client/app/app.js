@@ -34,6 +34,15 @@ angular.module('app', [
         url: '/programs',
         component: 'programs'
       })
-      ;
+      .state('colaboradores', {
+        url: '/colaboradores',
+        component: 'colaboradorespage'
+      })
+      .state('colaborador', {
+        url: '/colaboradores/:colabId',
+        component: 'colaboradorpage'
+      })
+    ;
   })
+
   .component('app', AppComponent);

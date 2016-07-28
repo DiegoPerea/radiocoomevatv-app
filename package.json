@@ -10,6 +10,7 @@
     "angular-ui-router": "^1.0.0-beta.1",
     "ng-audio": "0.0.2",
     "normalize.css": "^3.0.3",
+    "ui-select": "^0.18.1",
     "videogular": "^1.4.4",
     "videogular-angulartics": "^1.4.4",
     "videogular-buffering": "^1.4.4",

@@ -6,7 +6,8 @@ let podcastpageComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller
+  controller,
+  controllerAs: 'pcCtrl'
 };
 
 export default podcastpageComponent;

@@ -23,9 +23,9 @@ class ProgramsController {
     self.chapters = [];
 
     self.getVideoType = function(txt){
-      splittedText=txt.split(".");
-      console.log(splittedText);
-      type="video/"+splittedText[self.length-1];
+      var splittedText=txt.split(".");
+      var type="video/"+splittedText[splittedText.length-1];
+      return type;
     };
 
     self.programsList = {
@@ -40,21 +40,20 @@ class ProgramsController {
         $http.get('http://108.163.147.73/radio-new/public/api/v1.0/programas/programa/'+ programCategory)
           .then(function(response){
             self.chapters = response.data;
-            self.programsList.getprogram(response.data[0].id);
+            self.programsList.getProgram(response.data[0].id);
 
           });
       },
-      getprogram: function(id){
+      getProgram: function(id){
         $http.get('http://108.163.147.73/radio-new/public/api/v1.0/programas/programa/' + id)
           .then(function(response){
             var type=self.getVideoType(response.data[0].media);
             var addsource=[
               {
                 sources: [
-                  {src: $sce.trustAsResourceUrl(response.data[0].media), type: "video/mp4"}
+                  {src: $sce.trustAsResourceUrl(response.data[0].media), type: type}
                 ]
               }];
-            console.log(type);
             self.videoHandle.sources=addsource[0].sources;
             self.videoHandle.title=response.data[0].name;
           });
@@ -63,21 +62,13 @@ class ProgramsController {
 
     self.selectProgram = function(item){
       self.programsList.getChapters(item.URL);
-
     };
 
     self.init = function(){
       self.programsList.getListCategory();
-
-
-
-
-
     };
 
     self.init();
-
-
 
     return self;
   }

@@ -1,6 +1,6 @@
 <main>
 
-  <div class="container coomeva-container">
+  <div class="container coomeva-container main-container">
     <div class="col-md-10">
 
 
@@ -41,10 +41,10 @@
 
         <div class="program-episodes">
           <h3 class="item-title title-more">Capítulos</h3>
-          <div ng-class="podcastGrid" class="episode row" ng-repeat="item in programsCtrl.chapters">
+          <div ng-class="podcastGrid" class="episode row" ng-repeat="item in programsCtrl.chapters" ng-click="programsCtrl.programsList.getProgram(item.id)">
             <div class="col-md-4">
-              <div class="podcasts-image-conteiner">
-                <img src="{{item.image}}" alt="" />
+              <div class="podcasts-image-container text-center">
+                <img src="{{item.image}}" alt="" class="img-responsive"/>
                 <div class="playButton episode-playButton playButton-reverse">
                   <i class="glyphicon glyphicon-play"></i>
                 </div>
@@ -72,7 +72,7 @@
           </div>
         </div>
         <div class="row rower">
-          <div class="program col-md-12" ng-repeat="item in programsCtrl.allPrograms" ng-click="selectProgram(item)">
+          <div class="program col-md-12" ng-repeat="item in programsCtrl.allPrograms" ng-click="programsCtrl.selectProgram(item)">
             <div class="col-md-12">
               <div class="row">
                 <div class="col-md-5">
@@ -100,7 +100,7 @@
 
 
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 no-padding">
       <advertiseright></advertiseright>
     </div>
   </div>

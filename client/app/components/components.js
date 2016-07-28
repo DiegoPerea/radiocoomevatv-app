@@ -14,7 +14,10 @@ import Programs from './programs/programs';
 
 import PodcastPage from './podcastpage/podcastpage';
 
+import Colaboradores from './colaboradorespage/colaboradorespage';
+import Colaborador from './colaboradorpage/colaboradorpage';
 
+import News from './newspage/newspage';
 
 let componentModule = angular.module('app.components', [
   Navbar,
@@ -32,11 +35,12 @@ let componentModule = angular.module('app.components', [
 
   Programs,
 
-  PodcastPage
+  PodcastPage,
 
+  Colaboradores,
+  Colaborador,
 
-
-
+  News
 
 ])
 

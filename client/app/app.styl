@@ -1,5 +1,6 @@
 $maxwidth=1330px
 $heigth=1269px
+$restofpage=1050px
 .coomeva-container
   min-width $maxwidth
   width $maxwidth
@@ -38,3 +39,22 @@ $heigth=1269px
   text-shadow none !important
 .title-darker
   color #8c8c8c
+.no-border
+  border none;
+.main-container
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-flow: row wrap;
+.rest-of-page
+  width $restofpage
+.no-paddingleft
+  padding-left 0px !important
+.flex
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+.flex-wrap
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
