@@ -42,6 +42,10 @@ angular.module('app', [
         url: '/colaboradores/:colabId',
         component: 'colaboradorpage'
       })
+      .state('noticia', {
+        url: '/noticia/:noticeId',
+        component: 'newspage'
+      })
     ;
   })
 

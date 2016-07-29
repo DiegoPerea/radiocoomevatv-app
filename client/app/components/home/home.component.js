@@ -6,7 +6,8 @@ let homeComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller
+  controller,
+  controllerAs: 'hoCtrl'
 };
 
 export default homeComponent;

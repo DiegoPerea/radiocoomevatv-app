@@ -8,6 +8,8 @@
     "angular-audio": "^1.7.3",
     "angular-sanitize": "^1.5.8",
     "angular-ui-router": "^1.0.0-beta.1",
+    "angularslick": "^0.2.2",
+    "jquery": "^3.1.0",
     "ng-audio": "0.0.2",
     "normalize.css": "^3.0.3",
     "ui-select": "^0.18.1",

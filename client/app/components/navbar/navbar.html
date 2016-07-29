@@ -2,10 +2,10 @@
   <div class="container coomeva-container no-padding">
     <img src="assets/img/headerlogo.png" alt="">
     <div class="menu-principal pull-right">
-      <a id="nav-home" href="/home" ng-mouseover="navCtrl.hoverMenu($event)">Inicio</a>
-      <a id="nav-podcast" href="/podcast" ng-mouseover="navCtrl.hoverMenu($event)">Podcasts</a>
-      <a id="nav-programas" href="/programs" ng-mouseover="navCtrl.hoverMenu($event)">Programas</a>
-      <a id="nav-colaboradores" href="/colaboradores" ng-mouseover="navCtrl.hoverMenu($event)">Colaboradores</a>
+      <a id="nav-home" href="/home" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Inicio</a>
+      <a id="nav-podcast" href="/podcast" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Podcasts</a>
+      <a id="nav-programas" href="/programs" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Programas</a>
+      <a id="nav-colaboradores" href="/colaboradores" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Colaboradores</a>
       <img id="yellow-bar" src="assets/img/menuActive.jpg" alt="" style="left: {{navCtrl.barSetItemPosition}}px; width: {{navCtrl.barSetWidth}}px;height:7px;" />
     </div>
   </div>

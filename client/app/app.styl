@@ -1,6 +1,7 @@
 $maxwidth=1330px
 $heigth=1269px
 $restofpage=1050px
+$pagecontainer=1058px
 .coomeva-container
   min-width $maxwidth
   width $maxwidth
@@ -25,6 +26,8 @@ $restofpage=1050px
   font-size 29px !important
   font-weight bold !important
   text-shadow none !important
+.title-blue
+  color #0066AC !important
 .title-more
   color #A8A8A8
 .item-subtitle
@@ -40,21 +43,39 @@ $restofpage=1050px
 .title-darker
   color #8c8c8c
 .no-border
-  border none;
+  border none
 .main-container
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-flow: row wrap;
+  display -webkit-flex
+  display flex
+  -webkit-flex-direction row
+  flex-flow row wrap
 .rest-of-page
   width $restofpage
 .no-paddingleft
   padding-left 0px !important
 .flex
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display -webkit-flex
+  display -ms-flexbox
+  display flex
 .flex-wrap
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-wrap wrap
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+.empresa-videos
+  height $pagecontainer
+.empresa-noticias
+  height $pagecontainer
+.cat-title span
+  color gray
+.line-after-title
+  border-bottom 1px solid #808080
+  border-top none
+  width 61%
+  position absolute
+  left 36%
+  top 19px
+.slickcar-container
+  width 100%
+  padding 0 30px 0 31px
+.img-center
+  margin 0 auto !important

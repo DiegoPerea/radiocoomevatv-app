@@ -6,7 +6,8 @@ let newspageComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller
+  controller,
+  controllerAs:'newsCtrl'
 };
 
 export default newspageComponent;

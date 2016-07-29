@@ -1,3 +1,24 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
-</div>
+<main>
+  <div class="container coomeva-container main-container">
+    <radio></radio>
+    <div class="rest-of-page">
+
+      <div class="col-md-10" ng-init="newsCtrl.getNotice()">
+
+        <h3 class="item-title">{{newsCtrl.notice.nombre}}
+          <strong class="item-subtitle">{{newsCtrl.notice.fecha | date : format : timezone}}</strong>
+        </h3>
+        <p ng-bind-html="newsCtrl.notice.descripcion"></p>
+
+      </div>
+      <div class="col-md-2 no-padding">
+        <advertiseright></advertiseright>
+      </div>
+      <div class="col-md-12 no-padding">
+        <advertisebottom></advertisebottom>
+      </div>
+    </div>
+  </div>
+</main>
+
+
