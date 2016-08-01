@@ -8,17 +8,17 @@
   background #ECECEC;
   height 800px;
   overflow auto;
-.podcast .podcast-grid .categories
-  padding 12px 0;
-  text-align right;
-  background #ECECEC;
+ .categories
+  padding 12px 0
+  text-align right
+  background #ECECEC
+  margin-bottom 30px
 .podcast-separator
 .podcast .podcast-grid a
   float left;
   margin-top -3px;
   margin-left 20px;
   cursor pointer;
-  width 150px;
   height 250px;
   position relative;
   top -10px;
@@ -33,30 +33,31 @@
 .podcast .podcast-grid a figure
   text-align center;
   background #333;
-.podcast .podcast-grid a figure .podcasts-image-conteiner
+.podcasts-image-conteiner
   width 150px;
   height 150px;
   overflow hidden;
-.podcast .podcast-grid a figure .podcasts-image-conteiner img
-  max-width 100%;
-
+  margin 0 auto;
 .podcast .podcast-grid a hr
   padding 2px;
   margin 0px;
-.podcast .podcast-grid a figure div
-  background #333;
+.podcast-information-container
+  width: 100%;
+  text-overflow: ellipsis;
+  word-spacing: break-all;
+  white-space: nowrap;
   text-align left;
   padding 5px 10px;
-  height 54px;
 .podcast .podcast-grid ahover,
 .podcast .podcast-grid aactive
   text-decoration none;
-.podcast .podcast-grid a figure div strong
+.podcast-information-container strong
   color #D0D0D0;
   font-weight 100 !important;
   display block;
   height 49px;
   overflow hidden;
+  text-overflow ellipsis
 .podcast .podcast-grid-close
   height 900px;
   overflow auto;
@@ -169,8 +170,6 @@ figure.podcast-mini-player img
 .podcast-player .podcast-player-inset progress
   width 100%;
   font-size 5px;
-.podcast-player .podcast-information
-
 .podcast-player .podcast-information h1
   color white;
   font-size 36px;
@@ -194,7 +193,15 @@ figure.podcast-mini-player img
 .podcast-description p
   color #D0D0D0;
   font-size 14px;
-
-  /*
-  MAYBE
-  */
+.podcastGridItem
+  height 200px !important
+  text-align center
+  background #333
+  margin-left: 18px;
+.podcastGridItemContainer
+  margin-bottom 15px
+.selectize-control
+  text-align center
+.cat-select
+  padding-left 30px !important
+  padding-right 30px !important

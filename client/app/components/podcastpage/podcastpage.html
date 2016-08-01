@@ -1,25 +1,27 @@
+<link rel="stylesheet" href="assets/css/select.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+
 <main>
 
   <div class="container coomeva-container main-container">
 
-    <div class="col-md-10 podcast ">
 
-      <div ng-class="pcCtrl.podcastPlayer">
-        <div class="close-arrow">
-          <img src="img/podcast-player-arrow.png" alt="" />
-        </div>
-        <!-- PODCAST WHEN IS CLOSE UP -->
+
+    <div class="col-md-10 no-padding ">
+
+      <div class="col-md-6">
         <div class="podcast-mini-player" cg-busy="{promise: pcCtrl.podcastGridPromise, message: 'Cargando podcast...'}">
           <div class="player-section">
-<div class="col-md-12">
-  <div class="row">
-            <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{pcCtrl.currentPodcast.imagen}}" alt="" />
-            <div id="podcast-equalizer"></div>
-            <a ng-click='pcCtrl.playPausePodcast()'>
-              <i ng-class="pcCtrl.soundPodcast=='stop' ? 'glyphicon glyphicon-play' : 'glyphicon glyphicon-pause'"></i>
-            </a>
-    </div>
-          </div>
+            <div class="col-md-12">
+              <div class="row">
+                <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{pcCtrl.currentPodcast.imagen}}" alt="" />
+                <div id="podcast-equalizer"></div>
+                <a ng-click='pcCtrl.playPausePodcast()'>
+                  <i ng-class="pcCtrl.soundPodcast=='stop' ? 'glyphicon glyphicon-play' : 'glyphicon glyphicon-pause'"></i>
+                </a>
+              </div>
+            </div>
           </div>
           <div class="col-md-12 no-paddingleft">
 
@@ -33,57 +35,39 @@
 
           </div>
         </div>
-        <!-- END PODCAST CLOSE UP -->
-        <div class="podcast-full-expanded">
-          <div class="podcast-player-inset">
-            <img src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{pcCtrl.currentPodcast.imagen}}" alt="" class="col-md-5" />
-          </div>
-          <div class="podcast-home-controls row">
-
-            <a ng-show="pageload" class="play-pause-podcast"  ng-click='pcCtrl.playPausePodcast()'>
-              <i ng-class="pcCtrl.currentPodcast.audio.paused ? 'glyphicon glyphicon-play' : 'glyphicon glyphicon-pause'"></i>
-            </a>
-
-
-
-            <div class="col-md-10">
-
-              <input class="podcast-progress form-control ng-pristine ng-valid ng-touched" type="range" min="0" max="1" step="0.01" ng-model="currentPodcast.audio.progress">
-
-            </div>
-
-          </div>
-          <div class="podcast-information">
-            <h1>{{pcCtrl.currentPodcast.titulo}} <strong>{{pcCtrl.currentPodcast.subcategoria}}</strong></h1>
-            <p ng-bind-html="currentPodcast.descripcion"></p>
-          </div>
-        </div>
       </div>
-      <div ng-class="pcCtrl.podcastGrid" cg-busy="{promise: pcCtrl.podcastGridPromise, message: 'Cargando lista de podcast...'}">
+
+      <div class="col-md-6 podcast">
         <div class="categories">
 
-          <select>
-            <option value="" ng-repeat="item in pcCtrl.listCategories">
-              {{item.name}}
-            </option>
 
-          </select>
-
+          <div class="col-md-12 cat-select">
+          <ui-select ng-model="pcCtrl.selected.value" theme="selectize">
+            <ui-select-match>
+              <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="item in (pcCtrl.listCategories | filter: $select.search)">
+              <span ng-bind="item.name" ng-click="pcCtrl.podcastsList.setPodcast(item)"></span>
+            </ui-select-choices>
+          </ui-select>
+          </div>
 
         </div>
-        <div class="pcCtrl.podcast-separator"></div>
-        <a ng-class="podcastGridItem" ng-repeat="item in pcCtrl.currentPodcastsList track by $index" ng-click="pcCtrl.podcastsList.getPodcast(item)">
-          <div>
+
+        <a ng-class="podcastGridItem" ng-repeat="item in pcCtrl.currentPodcastsList track by $index" class="col-md-6 podcastGridItemContainer" ng-click="pcCtrl.podcastsList.getPodcast(item)">
+            <div class="col-md-10 podcastGridItem no-padding">
             <div class="podcasts-image-conteiner">
-              <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{item.imagen}}" alt="" />
+              <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{item.imagen}}" alt="" class="img-responsive" />
             </div>
-            <div class="podcast-information">
+            <div class="podcast-information-container">
               <strong>{{item.titulo}}</strong>
 
             </div>
-          </div>
+            </div>
         </a>
       </div>
+
+
 
     </div>
 

@@ -8,6 +8,11 @@ body{
   background: url("../img/headerback.jpg");
   margin-bottom:0px;
 }
+.header-colaborador{
+  background: url("../img/header-medicina.png") no-repeat center;
+  margin-bottom:0px;
+
+}
 .radio.adulto-contemporaneo{
   background: url('../../../assets/img/tira_reproductor.jpg');
   background-size: auto 100%;

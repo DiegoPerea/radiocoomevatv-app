@@ -23,8 +23,17 @@ class NavbarController {
       self.barSetWidth=angular.element(document.querySelector(self.actualSelector))[0].clientWidth;
     };
 
+    self.checkHeader=function(){
+      console.log($state.$current.name);
+      if($state.$current.name==='colaborador'){
+        self.headerClass='header-colaborador';
+      }else{
+        self.headerClass='header-default';
+      }
+    };
+    $interval(self.checkHeader, 150);
 
-
+    self.checkHeader();
     self.setPosition();
 
 

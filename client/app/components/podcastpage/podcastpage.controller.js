@@ -4,6 +4,10 @@ class PodcastpageController {
     var self = this;
     self.name = 'podcastpage';
 
+
+
+    self.selected = null;
+
     self.podcastGrid = 'podcast-grid col-md-5 row podcast-grid-close';
     self.podcastPlayer = 'podcast-player col-md-7 podcast-player-open';
     self.podcastGridItem = 'podcast-item in';
@@ -31,30 +35,14 @@ class PodcastpageController {
         $http.get('http://108.163.147.73/radio-new/public/api/v1.0/podcasts/lista-categorias')
           .then(function(response){
             self.listCategories = response.data;
+            self.selected = { value: self.listCategories[0] };
 
-
-            //$.fn.select2.defaults.set("URL", "name");
-
-            /*
-            var data = $.map(self.listCategories, function (obj) {
-              obj.id = obj.id || obj.URL; // replace pk with your identifier
-              obj.text = obj.text || obj.name; // replace name with the property used for the text
-              return obj;
-            });
-            $("#select-podcast-category").select2({
-              placeholder: 'Selecciona una categoría...',
-              data: self.listCategories
-            });
-            $("#select-podcast-category").on('change', function(event){
-             self.gridItemsAnimation.out();
-             self.podcastsList.getPodcastByCategory({categoryName: event.target.value, start: 0, end: 30, arguments: true});
-            })
-             */
             self.gridItemsAnimation.out();
             self.podcastsList.getPodcastByCategory({categoryName: event.target.value, start: 0, end: 30, arguments: true});
           });
       },
-      getPodcastByCategory: function(listParams){
+      getPodcastByCategory: function(listParams=undefined){
+
         if(listParams == undefined ){
           listParams = {categoryName: 'a mi colombia', start: 0, end: 30, arguments: false};
         }
@@ -105,8 +93,14 @@ class PodcastpageController {
         self.currentPodcast.descripcion = item.descripcion;
         self.currentPodcast.imagen = item.imagen;
         self.currentPodcast.subcategoria = item.subcategoria;
+      },
+      setPodcast: function(item){
+        console.log(item);
+        var params={categoryName: item.name, start: 0, end: 30, arguments: false};
+        self.podcastsList.getPodcastByCategory(params)
       }
     };
+
     /*
      * Verificar track current
      * */

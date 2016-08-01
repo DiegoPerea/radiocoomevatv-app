@@ -1,6 +1,6 @@
 <header class="container-fluid no-padding navbar no-border {{navCtrl.headerClass}}">
   <div class="container coomeva-container no-padding">
-    <img src="assets/img/headerlogo.png" alt="">
+    <img src="assets/img/headerlogo.png" alt="" ng-class="navCtrl.headerClass!=='header-colaborador' ? 'logo-display' : 'logo-hide'">
     <div class="menu-principal pull-right">
       <a id="nav-home" href="/home" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Inicio</a>
       <a id="nav-podcast" href="/podcast" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Podcasts</a>
