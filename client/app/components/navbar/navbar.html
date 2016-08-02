@@ -1,12 +1,28 @@
-<header class="container-fluid no-padding navbar no-border {{navCtrl.headerClass}}">
-  <div class="container coomeva-container no-padding">
-    <img src="assets/img/headerlogo.png" alt="" ng-class="navCtrl.headerClass!=='header-colaborador' ? 'logo-display' : 'logo-hide'">
+<style>
+
+</style>
+<header class="container-fluid no-padding navbar no-border header-default">
+  <div class="container coomeva-container no-padding ">
+    <div id="triangle-left" class="{{navCtrl.headerClass}}">
+      <img src="assets/img/logos_colaboradores/{{navCtrl.headerLogo}}" alt="" class="logo-colaborador" style="{{navCtrl.headerLogoWidth}}">
+      <div class="menu-colaborador">
+        <a id="nav-home" href="/home" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Inicio</a>
+        <a id="nav-podcast" href="/podcast" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Podcasts</a>
+        <a id="nav-programas" href="/programs" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Programas</a>
+        <a id="nav-colaboradores" href="/colaboradores" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Colaboradores</a>
+        <img id="yellow-bar" src="assets/img/menuActive.jpg" alt="" style="left: {{navCtrl.barSetItemPosition}}px; width: {{navCtrl.barSetWidth}}px;height:7px;" />
+      </div>
+    </div>
+
+
+    <a href="/home">
+    <img src="assets/img/headerlogo.png" alt="" ></a>
     <div class="menu-principal pull-right">
       <a id="nav-home" href="/home" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Inicio</a>
       <a id="nav-podcast" href="/podcast" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Podcasts</a>
       <a id="nav-programas" href="/programs" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Programas</a>
       <a id="nav-colaboradores" href="/colaboradores" ng-click="navCtrl.changeState($event)" ng-mouseover="navCtrl.hoverMenu($event)">Colaboradores</a>
-      <img id="yellow-bar" src="assets/img/menuActive.jpg" alt="" style="left: {{navCtrl.barSetItemPosition}}px; width: {{navCtrl.barSetWidth}}px;height:7px;" />
+      <img id="yellow-bar" src="assets/img/menuActive.jpg" alt="" style="left: {{navCtrl.barSetItemPosition}}px; width: {{navCtrl.barSetWidth}}px;height:7px;" class="hide"/>
     </div>
   </div>
 </header>

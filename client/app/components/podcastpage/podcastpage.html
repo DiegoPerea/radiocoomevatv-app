@@ -10,7 +10,7 @@
 
     <div class="col-md-10 no-padding ">
 
-      <div class="col-md-6">
+      <div class="col-md-6 podcast-player">
         <div class="podcast-mini-player" cg-busy="{promise: pcCtrl.podcastGridPromise, message: 'Cargando podcast...'}">
           <div class="player-section">
             <div class="col-md-12">
@@ -57,7 +57,7 @@
         <a ng-class="podcastGridItem" ng-repeat="item in pcCtrl.currentPodcastsList track by $index" class="col-md-6 podcastGridItemContainer" ng-click="pcCtrl.podcastsList.getPodcast(item)">
             <div class="col-md-10 podcastGridItem no-padding">
             <div class="podcasts-image-conteiner">
-              <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{item.imagen}}" alt="" class="img-responsive" />
+              <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{item.imagen}}" alt="" class="img-responsive img-fullwidth" />
             </div>
             <div class="podcast-information-container">
               <strong>{{item.titulo}}</strong>
@@ -71,7 +71,7 @@
 
     </div>
 
-    <div class="col-md-2 no-padding">
+    <div class="col-md-2 no-padding podcast-advertise">
       <advertiseright></advertiseright>
     </div>
   </div>

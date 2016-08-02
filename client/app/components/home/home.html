@@ -15,14 +15,14 @@
             <div><img class="img-responsive" src="assets/img/images/ella.png"></div>
           </slick>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6 home-podcast">
           <h2 class="cat-title">
             POD<span>CAST</span>
             <hr class="line-after-title">
           </h2>
           <div class="slickcar-container">
 
-          <slick dots="true" infinite="false"  slides-to-show="1" touch-move="true" arrows="true" slides-to-scroll="1" >
+          <slick dots="false" infinite="false"  slides-to-show="1" touch-move="true" arrows="true" slides-to-scroll="1" >
             <div><img class="img-responsive img-center" src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/cepeda.jpg">
               <div class="col-md-12">
               <h2 class="item-title">Andres Cepeda
@@ -58,23 +58,23 @@
           </slick>
           </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
           <h2 class="cat-title">
             INTERES
             <hr class="line-after-title">
           </h2>
 
-          <div  ui-sref="noticia({noticeId: item.id})" class="empresa-interes-item col-xs-12 col-sm-12 col-md-12 col-md-12" ng-repeat="item in hoCtrl.listNotices | limitTo : 9">
-            <div class="col-md-6 colaboradores-news-cover">
+          <div  ui-sref="noticia({noticeId: item.id})" class="empresa-interes-item col-xs-12 col-sm-12 col-md-12 col-md-12" ng-repeat="item in hoCtrl.listNotices | limitTo : 4">
+            <div class="col-md-7 colaboradores-news-cover">
               <img src="http://radio.coomeva.com.co/.storage/noticias_1/{{item.imagen}}" alt="" class="img-responsive"/>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
               <span class="date">{{item.expira}}</span>
-              <strong ng-bind-html="item.nombre"></strong>
+              <strong ng-bind-html="item.nombre" class="home-interest-name"></strong>
             </div>
           </div>
         </div>
-        <div class="col-md-2 no-padding">
+        <div class="col-md-2 no-padding home-adverise-right">
           <advertiseright></advertiseright>
         </div>
         <div class="col-md-12 no-padding">

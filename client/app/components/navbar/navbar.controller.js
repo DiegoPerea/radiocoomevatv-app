@@ -1,14 +1,19 @@
 class NavbarController {
-  constructor($state,$interval) {
+  constructor($stateParams,$interval) {
     'ngInject';
     var self = this;
     self.name = 'navbar';
 
-    self.headerClass='header-default';
+    self.headerClass='triangle-left-default';
+
+    self.headerLogo='1.png';
+
+    self.headerLogoWidth='max-width:200px';
 
     self.actualSelector='a#nav-home';
 
     self.hoverMenu = function($event){
+      console.log($event.target.getBoundingClientRect().left);
       self.barSetItemPosition = $event.target.getBoundingClientRect().left;
       self.barSetWidth = $event.target.clientWidth;
     };
@@ -18,23 +23,52 @@ class NavbarController {
     };
 
     self.setPosition = function(){
-
-      self.barSetItemPosition=angular.element(document.querySelector(self.actualSelector))[0].getBoundingClientRect().left;
+      console.log(angular.element(document.querySelector(self.actualSelector))[0].getBoundingClientRect().left);
+      self.barSetItemPosition=angular.element(document.querySelector(self.actualSelector))[0].getBoundingClientRect().left-8.5;
       self.barSetWidth=angular.element(document.querySelector(self.actualSelector))[0].clientWidth;
     };
 
+
+
     self.checkHeader=function(){
-      console.log($state.$current.name);
-      if($state.$current.name==='colaborador'){
-        self.headerClass='header-colaborador';
-      }else{
-        self.headerClass='header-default';
+
+
+      if($stateParams.colabId==='medicina_prepagada'){
+        self.headerClass='triangle-medicina';
+        self.headerLogo='2.png';
+        self.headerLogoWidth='max-width:324px';
+      }else if($stateParams.colabId==='grupo_coomeva'){
+        self.headerClass='triangle-grupo';
+        self.headerLogo='1.png';
+        self.headerLogoWidth='max-width:200px';
+      }else if($stateParams.colabId==='corredores_seguros'){
+        self.headerClass='triangle-corredores';
+        self.headerLogo='3.png';
+        self.headerLogoWidth='max-width:324px';
+      }else if($stateParams.colabId==='eps'){
+        self.headerClass='triangle-eps';
+        self.headerLogo='4.png';
+        self.headerLogoWidth='max-width:200px';
+      }else if($stateParams.colabId==='bancoomeva'){
+        self.headerClass='triangle-banco';
+        self.headerLogo='5.png';
+        self.headerLogoWidth='max-width:200px';
+      }else if($stateParams.colabId==='recreacion'){
+        self.headerClass='triangle-recreacion';
+        self.headerLogo='6.png';
+        self.headerLogoWidth='max-width:324px';
+      }
+
+      else{
+        self.headerClass='triangle-left-default';
       }
     };
     $interval(self.checkHeader, 150);
 
     self.checkHeader();
     self.setPosition();
+
+
 
 
 

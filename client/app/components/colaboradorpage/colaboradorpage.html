@@ -1,4 +1,10 @@
 <main>
+  <style >
+    .slick-prev:before, .slick-next:before{
+      color: #333333 !important;
+    }
+
+  </style>
   <script src="../../../bower_components/slick-carousel/slick/slick.min.js"></script>
   <link rel="stylesheet" href="../../../bower_components/slick-carousel/slick/slick.css">
   <link rel="stylesheet" href="../../../bower_components/slick-carousel/slick/slick-theme.css">
@@ -6,7 +12,7 @@
     <radio></radio>
     <div class="rest-of-page flex flex-wrap">
 
-      <div class="empresa-noticias col-md-5 ">
+      <div class="empresa-noticias col-md-4 ">
         <h3 class="title">
           Últimas Noticias
         </h3>
@@ -21,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="empresa-videos col-md-7">
+      <div class="empresa-videos col-md-8">
         <a class="main-video col-xs-12 col-sm-12 col-md-12 col-md-12" href="#">
           <img src="assets/img/colaboradores/medicina_prepagada/main.jpg" alt="" />
         </a>
@@ -32,7 +38,7 @@
               <div class="row rower">
 
                 <div class="slickcar-container">
-                <slick infinite="true" speed="300" slides-to-show="1" touch-move="true" arrows="false" slides-to-scroll="1" >
+                <slick infinite="true" speed="300" slides-to-show="1" touch-move="true"  arrows="true" slides-to-scroll="1" >
                   <div><img class="img-responsive" src="http://placehold.it/1050x600"></div>
                   <div><img class="img-responsive" src="http://placehold.it/1050x600"></div>
                   <div><img class="img-responsive" src="http://placehold.it/1050x600"></div>
@@ -65,7 +71,7 @@
 
           </div>
 
-          <div class="col-md-3 no-padding  flex">
+          <div class="col-md-3 no-padding  colaborador-page-advertise">
             <advertiseright></advertiseright>
           </div>
 
@@ -76,7 +82,7 @@
 
 
     </div>
-      <div class="col-md-12 no-padding flex">
+      <div class="col-md-12 no-padding ">
         <advertisebottom></advertisebottom>
       </div>
   </div>

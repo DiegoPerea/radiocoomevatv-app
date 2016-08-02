@@ -3,7 +3,7 @@
     <radio></radio>
     <div class="rest-of-page">
 
-      <div class="col-md-10" ng-init="newsCtrl.getNotice()">
+      <div class="col-md-10 news-inside" ng-init="newsCtrl.getNotice()">
 
         <h3 class="item-title">{{newsCtrl.notice.nombre}}
           <strong class="item-subtitle">{{newsCtrl.notice.fecha | date : format : timezone}}</strong>
@@ -11,7 +11,7 @@
         <p ng-bind-html="newsCtrl.notice.descripcion"></p>
 
       </div>
-      <div class="col-md-2 no-padding">
+      <div class="col-md-2 no-padding news-advertiseright">
         <advertiseright></advertiseright>
       </div>
       <div class="col-md-12 no-padding">
