@@ -22,6 +22,7 @@ class PodcastpageController {
     self.currentPodcastsListCarousel = [];
     self.podcastGridPromise = null;
     self.frequiencyInterval = null;
+    self.podcastMeasureConfig='width="250" height="270"';
     /*
      * Servicio de la lista de Podcasts:
      * getListCategory: Trae las categorías del api
@@ -78,11 +79,13 @@ class PodcastpageController {
           });
       },
       getPodcast: function(item){
+        self.getSelectedTrack='track.mp3';
         self.elementHTML = '<embed '+
-          'width="302" height="294"'+
-          'src="player/podcasts.swf"'+
-          'flashvars="podcast=player/'+self.getSelectedTrack+'&playingPodcast=playing"'+
+          self.podcastMeasureConfig+
+          'src="assets/player/podcasts.swf"'+
+          'flashvars="podcast=assets/player/'+self.getSelectedTrack+'&playingPodcast=playing"'+
           'type="application/x-shockwave-flash">';
+          angular.element(document.querySelector('#podcast-equalizer')).html(self.elementHTML);
         //$('#podcast-equalizer').html(self.elementHTML);
 
         self.podcastGrid = 'podcast-grid col-md-5 row podcast-grid-close row';
@@ -115,13 +118,16 @@ class PodcastpageController {
         self.soundPodcast = 'play';
         self.currentTrack = 'getSelectedTrack';
         self.elementHTML = '<embed '+
-          'width="302" height="294"'+
-          'src="player/podcasts.swf"'+
-          'flashvars="podcast=player/'+self.getSelectedTrack+'&playingPodcast=playing"'+
+          self.podcastMeasureConfig+
+          'src="assets/player/podcasts.swf"'+
+          'flashvars="podcast=assets/player/'+self.getSelectedTrack+'&playingPodcast=playing"'+
           'type="application/x-shockwave-flash">';
+        angular.element(document.querySelector('#podcast-equalizer')).html(self.elementHTML);
        // $('#podcast-equalizer').html(self.elementHTML);
       }else{
         self.soundPodcast = 'stop';
+        angular.element(document.querySelector('#podcast-equalizer')).empty();
+
         //$('#podcast-equalizer').empty();
       }
     };

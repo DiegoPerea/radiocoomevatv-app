@@ -122,7 +122,7 @@ class RadioController {
       self.audioHandle.metadata.cover = item.cover;
       self.audioHandle.currentRadio=null;
       self.audioHandle.currentSongTop=true;
-      self.audioHandle.playerSetButtonClass('play');
+      self.audioHandle.playerSetButtonClass('stop');
       self.audioHandle.playing=true;
 
 

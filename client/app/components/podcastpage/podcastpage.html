@@ -15,8 +15,14 @@
           <div class="player-section">
             <div class="col-md-12">
               <div class="row">
-                <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{pcCtrl.currentPodcast.imagen}}" alt="" />
-                <div id="podcast-equalizer"></div>
+                <div class="sound-podcaster-eq">
+                  <div class="col-md-6 cover-podcast">
+                    <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{pcCtrl.currentPodcast.imagen}}" alt="" class="img-fullheight"/>
+                  </div>
+                  <div class="col-md-6">
+                    <div id="podcast-equalizer"></div>
+                  </div>
+                </div>
                 <a ng-click='pcCtrl.playPausePodcast()'>
                   <i ng-class="pcCtrl.soundPodcast=='stop' ? 'glyphicon glyphicon-play' : 'glyphicon glyphicon-pause'"></i>
                 </a>
