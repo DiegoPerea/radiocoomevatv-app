@@ -69,8 +69,7 @@
     "yargs": "^3.9.0"
   },
   "scripts": {
-    "test": "karma start",
-    "deploy": "gh-pages -d build"
+    "test": "karma start"
   },
   "keywords": [
     "angular",
@@ -82,5 +81,6 @@
     "url": "https://github.com/angularclass/NG6-starter.git"
   },
   "author": "AngularClass",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "start": "gulp serve":
 }
