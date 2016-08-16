@@ -1,6 +1,8 @@
 class ColaboradorespageController {
   constructor() {
-    this.name = 'colaboradorespage';
+    var self=this;
+    self.name = 'colaboradorespage';
+    self.playing=true;
   }
 }
 

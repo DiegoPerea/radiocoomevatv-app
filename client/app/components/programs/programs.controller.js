@@ -8,7 +8,7 @@ class ProgramsController {
 
     self.videoHandle = {
       sources:[],
-      theme: "/assets/css/videogular-themes-default/videogular.min.css",
+      theme: "./assets/css/videogular-themes-default/videogular.min.css",
       title: null,
       subtitle: null,
       description: null,

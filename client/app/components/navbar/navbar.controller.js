@@ -29,7 +29,7 @@ class NavbarController {
     };
 
 
-
+    self.principalNavShow=true;
     self.checkHeader=function(){
 
 
@@ -37,30 +37,43 @@ class NavbarController {
         self.headerClass='triangle-medicina';
         self.headerLogo='2.png';
         self.headerLogoWidth='max-width:324px';
+        self.actualSelector='a#colab-home';
+        self.principalNavShow=false;
       }else if($stateParams.colabId==='grupo_coomeva'){
         self.headerClass='triangle-grupo';
         self.headerLogo='1.png';
         self.headerLogoWidth='max-width:200px';
+        self.actualSelector='a#colab-home';
+        self.principalNavShow=false;
       }else if($stateParams.colabId==='corredores_seguros'){
         self.headerClass='triangle-corredores';
         self.headerLogo='3.png';
         self.headerLogoWidth='max-width:324px';
+        self.actualSelector='a#colab-home';
+        self.principalNavShow=false;
       }else if($stateParams.colabId==='eps'){
         self.headerClass='triangle-eps';
         self.headerLogo='4.png';
         self.headerLogoWidth='max-width:200px';
+        self.actualSelector='a#colab-home';
+        self.principalNavShow=false;
       }else if($stateParams.colabId==='bancoomeva'){
         self.headerClass='triangle-banco';
         self.headerLogo='5.png';
         self.headerLogoWidth='max-width:200px';
+        self.actualSelector='a#colab-home';
+        self.principalNavShow=false;
       }else if($stateParams.colabId==='recreacion'){
         self.headerClass='triangle-recreacion';
         self.headerLogo='6.png';
         self.headerLogoWidth='max-width:324px';
+        self.actualSelector='a#colab-home';
+        self.principalNavShow=false;
       }
 
       else{
         self.headerClass='triangle-left-default';
+        self.principalNavShow=true;
       }
     };
     $interval(self.checkHeader, 150);

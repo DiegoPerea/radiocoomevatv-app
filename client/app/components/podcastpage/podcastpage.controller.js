@@ -82,8 +82,8 @@ class PodcastpageController {
         self.getSelectedTrack='track.mp3';
         self.elementHTML = '<embed '+
           self.podcastMeasureConfig+
-          'src="assets/player/podcasts.swf"'+
-          'flashvars="podcast=assets/player/'+self.getSelectedTrack+'&playingPodcast=playing"'+
+          'src="./assets/player/podcasts.swf"'+
+          'flashvars="podcast=./assets/player/'+self.getSelectedTrack+'&playingPodcast=playing"'+
           'type="application/x-shockwave-flash">';
           angular.element(document.querySelector('#podcast-equalizer')).html(self.elementHTML);
         //$('#podcast-equalizer').html(self.elementHTML);
@@ -119,8 +119,8 @@ class PodcastpageController {
         self.currentTrack = 'getSelectedTrack';
         self.elementHTML = '<embed '+
           self.podcastMeasureConfig+
-          'src="assets/player/podcasts.swf"'+
-          'flashvars="podcast=assets/player/'+self.getSelectedTrack+'&playingPodcast=playing"'+
+          'src="./assets/player/podcasts.swf"'+
+          'flashvars="podcast=./assets/player/'+self.getSelectedTrack+'&playingPodcast=playing"'+
           'type="application/x-shockwave-flash">';
         angular.element(document.querySelector('#podcast-equalizer')).html(self.elementHTML);
        // $('#podcast-equalizer').html(self.elementHTML);

@@ -1,18 +1,18 @@
 <main>
-  <script src="../../../bower_components/slick-carousel/slick/slick.min.js"></script>
-  <link rel="stylesheet" href="../../../bower_components/slick-carousel/slick/slick.css">
-  <link rel="stylesheet" href="../../../bower_components/slick-carousel/slick/slick-theme.css">
+  <script src="./bower_components/slick-carousel/slick/slick.min.js"></script>
+  <link rel="stylesheet" href="./bower_components/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="./bower_components/slick-carousel/slick/slick-theme.css">
   <div class="container coomeva-container main-container">
-      <radio></radio>
+      <radio playing="hoCtrl.playing" ></radio>
 
       <div class="rest-of-page">
         <div class="col-md-12 no-padding">
 
           <slick dots="true" infinite="true" speed="300" slides-to-show="1" touch-move="true" arrows="false" slides-to-scroll="1" >
-            <div><img class="img-responsive" src="assets/img/images/main-banner.jpg"></div>
-            <div><img class="img-responsive" src="assets/img/images/ella.png"></div>
-            <div><img class="img-responsive" src="assets/img/images/main-banner.jpg"></div>
-            <div><img class="img-responsive" src="assets/img/images/ella.png"></div>
+            <div><img class="img-responsive" src="./assets/img/images/main-banner.jpg"></div>
+            <div><img class="img-responsive" src="./assets/img/images/ella.png"></div>
+            <div><img class="img-responsive" src="./assets/img/images/main-banner.jpg"></div>
+            <div><img class="img-responsive" src="./assets/img/images/ella.png"></div>
           </slick>
         </div>
         <div class="col-md-6 home-podcast">
@@ -23,7 +23,18 @@
           <div class="slickcar-container">
 
           <slick dots="false" infinite="false"  slides-to-show="1" touch-move="true" arrows="true" slides-to-scroll="1" >
-            <div><img class="img-responsive img-center" src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/cepeda.jpg">
+            <div>
+              <div class="col-md-6">
+
+                <img class="img-responsive img-center" src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/cepeda.jpg">
+                <a  ng-click='hoCtrl.playPausePodcast(0,"track.mp3")'>
+                  <i  ng-class="hoCtrl.soundPodcast0=='stop' ? 'glyphicon glyphicon-play' : 'glyphicon glyphicon-pause'" class="playPodcastHome"></i>
+                </a>
+              </div>
+
+              <div class="col-md-6" id="podcastHome0">
+
+              </div>
               <div class="col-md-12">
               <h2 class="item-title">Andres Cepeda
                 <span class="item-subtitle">
@@ -39,7 +50,18 @@
                 </p>
               </div>
             </div>
-            <div><img class="img-responsive img-center" src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/cepeda.jpg">
+            <div>
+              <div class="col-md-6">
+
+                <img class="img-responsive img-center" src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/cepeda.jpg">
+                <a  ng-click='hoCtrl.playPausePodcast(1,"track.mp3")'>
+                  <i  ng-class="hoCtrl.soundPodcast1=='stop' ? 'glyphicon glyphicon-play' : 'glyphicon glyphicon-pause'" class="playPodcastHome"></i>
+                </a>
+              </div>
+
+              <div class="col-md-6" id="podcastHome1">
+
+              </div>
               <div class="col-md-12">
               <h2 class="item-title">Andres Cepeda
                 <span class="item-subtitle">

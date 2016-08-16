@@ -6,7 +6,8 @@ let colaboradorespageComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller
+  controller,
+  controllerAs:'colabCtrl'
 };
 
 export default colaboradorespageComponent;

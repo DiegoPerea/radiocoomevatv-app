@@ -5,7 +5,9 @@ import './radio.styl';
 
 let radioComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+    playing: '='
+  },
   template,
   controller,
   controllerAs: 'radioCtrl'

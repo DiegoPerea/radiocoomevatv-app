@@ -4,7 +4,7 @@ class ColaboradorpageController {
     var self = this;
     this.name = 'colaboradorpage';
 
-    console.log($stateParams.colabId);
+    self.playing=true;
 
     self.currentVideo = null;
     self.currentProgramCategory = 'especiales_coomeva_salud';

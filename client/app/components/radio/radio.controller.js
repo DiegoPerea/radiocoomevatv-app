@@ -5,6 +5,8 @@ class RadioController {
 
     var self = this;
 
+    console.log(self);
+
     self.name = 'radio';
 
     self.audioHandle = {
@@ -56,12 +58,32 @@ class RadioController {
 
       if(self.audioHandle.playing===true){
         self.eqBarsAnimation();
+
       }else{
         self.eqBarsStop();
       }
     };
 
     $interval(self.animationEq, 100);
+
+
+    self.startAudio=function(){
+      self.audioHandle.playing= true;
+      self.playing= true;
+      self.audioHandle.playerSetButtonClass('stop');
+
+
+    };
+
+    self.stopAudio=function(){
+      self.audioHandle.playing= false;
+      self.playing= false;
+      self.audioHandle.playerSetButtonClass('play');
+      self.audioHandle.audio.restart();
+
+    };
+
+
 
     self.playPauseButton = function(){
       if(self.audioHandle.playing=== false){
@@ -81,12 +103,9 @@ class RadioController {
           self.audioHandle.audio.play();
         }
 
-        self.audioHandle.playing= true;
-        self.audioHandle.playerSetButtonClass('stop');
+       self.startAudio();
       }else{
-        self.audioHandle.playing= false;
-        self.audioHandle.playerSetButtonClass('play');
-        self.audioHandle.audio.restart();
+       self.stopAudio();
       }
     };
 
@@ -124,6 +143,7 @@ class RadioController {
       self.audioHandle.currentSongTop=true;
       self.audioHandle.playerSetButtonClass('stop');
       self.audioHandle.playing=true;
+      self.playing= true;
 
 
       self.audioHandle.audio.play();
@@ -242,6 +262,17 @@ class RadioController {
       self.getRadio.adultoContemporaneo();
 
     };
+
+    self.playingCheck=function(){
+
+      if(self.playing===false){
+        self.stopAudio();
+      }else{
+        self.startAudio();
+      }
+    };
+
+    $interval(self.playingCheck, 10);
 
     self.initRadio();
 
