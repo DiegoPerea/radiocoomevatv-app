@@ -1,8 +1,17 @@
 class NavbarController {
-  constructor($stateParams,$interval) {
+  constructor($stateParams,$interval,$scope,$state) {
     'ngInject';
     var self = this;
     self.name = 'navbar';
+
+
+
+    $scope.$on('$locationChangeSuccess', function(evt) {
+      self.state=$state.current.name;
+      console.log($stateParams.colabId);
+      console.log(self.state);
+    });
+
 
     self.headerClass='triangle-left-default';
 
@@ -13,7 +22,7 @@ class NavbarController {
     self.actualSelector='a#nav-home';
 
     self.hoverMenu = function($event){
-      console.log($event.target.getBoundingClientRect().left);
+      //console.log($event.target.getBoundingClientRect().left);
       self.barSetItemPosition = $event.target.getBoundingClientRect().left;
       self.barSetWidth = $event.target.clientWidth;
     };
@@ -23,16 +32,16 @@ class NavbarController {
     };
 
     self.setPosition = function(){
-      console.log(angular.element(document.querySelector(self.actualSelector))[0].getBoundingClientRect().left);
+      //console.log(angular.element(document.querySelector(self.actualSelector))[0].getBoundingClientRect().left);
       self.barSetItemPosition=angular.element(document.querySelector(self.actualSelector))[0].getBoundingClientRect().left-8.5;
       self.barSetWidth=angular.element(document.querySelector(self.actualSelector))[0].clientWidth;
     };
 
 
     self.principalNavShow=true;
+
+
     self.checkHeader=function(){
-
-
       if($stateParams.colabId==='medicina_prepagada'){
         self.headerClass='triangle-medicina';
         self.headerLogo='2.png';
@@ -72,8 +81,11 @@ class NavbarController {
       }
 
       else{
+
         self.headerClass='triangle-left-default';
         self.principalNavShow=true;
+
+
       }
     };
     $interval(self.checkHeader, 150);

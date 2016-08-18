@@ -1,11 +1,17 @@
 
 class RadioController {
-  constructor($interval,$http,ngAudio) {
+  constructor($interval,$http,ngAudio,$scope) {
     'ngInject';
 
     var self = this;
 
-    console.log(self);
+    $scope.$on("$destroy",function(){
+      $interval.cancel(self.intervalAnimationEq);
+      $interval.cancel(self.intervalRadioCheck);
+      $interval.cancel(self.intervalPlayingCheck);
+    });
+
+
 
     self.name = 'radio';
 
@@ -64,7 +70,7 @@ class RadioController {
       }
     };
 
-    $interval(self.animationEq, 100);
+    self.intervalAnimationEq=$interval(self.animationEq, 100);
 
 
     self.startAudio=function(){
@@ -256,7 +262,7 @@ class RadioController {
       }
     };
 
-    $interval(self.radioCheck, 2000);
+    self.intervalRadioCheck=$interval(self.radioCheck, 2000);
 
     self.initRadio = function(){
       self.getRadio.adultoContemporaneo();
@@ -272,7 +278,7 @@ class RadioController {
       }
     };
 
-    $interval(self.playingCheck, 10);
+    self.intervalPlayingCheck=$interval(self.playingCheck, 10);
 
     self.initRadio();
 
